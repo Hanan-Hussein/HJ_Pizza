@@ -24,3 +24,21 @@ body{
 .aboutImg{
     height:50vh
 }
+.callAction{
+    height: 80vh;
+    z-index: 2;
+}
+.shapeParent{
+    position: relative;
+}
+.shape{
+    height: 79vh;
+    position:absolute;
+    top:0.75rem;
+    right:0;
+    z-index: 1;
+
+}
+.seller{
+    margin-right: 0;
+}
