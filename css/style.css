@@ -43,3 +43,10 @@ body{
 .seller{
     margin-right: 0;
 }
+.bgContact{
+    background-color: #FFCB74;
+    color: black;
+}
+.footerLogo{
+    height: 27vh;
+}
