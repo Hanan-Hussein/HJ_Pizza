@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color:#F6F6F6;
+
+}
+body{
+    background-color: #111111;
+    height: 100vh;
+}
+.aboutUs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+}
+.us{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.aboutImg{
+    height:50vh
+}
