@@ -25,18 +25,19 @@ body{
     height:50vh
 }
 .callAction{
-    height: 80vh;
+    height: 84vh;
     z-index: 2;
 }
 .shapeParent{
     position: relative;
 }
 .shape{
-    height: 79vh;
+    height: 85vh;
     position:absolute;
-    top:0.75rem;
-    right:0;
-    z-index: 1;
+    top:-2.9vh;
+    right:-0.85vw;
+    
+    z-index: -1;
 
 }
 .seller{
