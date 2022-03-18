@@ -50,3 +50,12 @@ body{
 .footerLogo{
     height: 27vh;
 }
+.logoHeader{
+    height: 23vh;
+}
+.rotate{
+    height: 70vh;
+}
+.firstPage,.secondPage,.pageFive{
+    height: 100vh;
+}
