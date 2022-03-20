@@ -1,5 +1,6 @@
 $('#customize').click(function(e) {
     e.preventDefault();
+    pizzaNameTitle = $('.pizzaName').html();
     $('.toppingsAndCrust,#addtoCart,#customize').toggle("swing");
 
 });
@@ -62,16 +63,33 @@ Toppings.prototype.toppingPrice = function() {
 
 }
 
-$('#formMenu').submit(function(e) {
-    e.preventDefault();
-    var sizeV = this.sizes.value;
-    var crustName = this.crust.value;
+
+
+$('#formMenu input').click(function(e) {
+    // e.preventDefault();
+    var form = document.getElementById('formMenu');
+    var sizeV = form.sizes.value;
+    var crustName = form.crust.value;
+
+
+    var crust = new CrustType(crustName);
     var toppingName = [];
     toppingName = $("input:checkbox:checked").map(function(bbb) {
         return $(this).val();
     }).get();
 
+    // toppingUser = toppingName.map(function(topper) {
+    //     return new Toppings(topper);
+    // }).get();
+    // console.log(toppingUser);
+    var [x, y, z] = toppingName;
+    var newTopping1 = new Toppings(x);
+    var newTopping2 = new Toppings(y);
+    var newTopping3 = new Toppings(z);
+    var userPizza = new Pizza(pizzaNameTitle, sizeV);
+    userPizza.crustType.push(crust);
+    userPizza.toppings.push(newTopping1, newTopping2, newTopping3);
+    console.log(userPizza.fullPrice());
     console.log(sizeV);
     console.log(crustName);
-    console.log(toppingName);
 });
