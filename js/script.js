@@ -12,11 +12,12 @@ function Pizza(name,size){
 }
 //fullprice protype
 Pizza.prototype.fullPrice=function(){
-    var totalToppingPrice;
-    this.toppings[0].toppingPrice().forEach(price => {
-        totalToppingPrice+=price;
+    var totalToppingPrice=0;
+    this.toppings.forEach(topping => {
+        totalToppingPrice+=topping.toppingPrice();
     });
-    var total=this.sizePrice()+totalToppingPrice+this.crustType.crustPrice();
+
+    var total=totalToppingPrice+this.sizePrice()+this.crustType[0].crustPrice();
     return total;
 
 }
@@ -52,7 +53,7 @@ function Toppings(toppingName){
     this.toppingName = toppingName;
 }
 Toppings.prototype.toppingPrice=function(){
-    if(this.toppingName==="chesse"){
+    if(this.toppingName==="cheese"){
         return 150;
     }
     else if(this.toppingName==="pepporoni"){
@@ -67,14 +68,13 @@ Toppings.prototype.toppingPrice=function(){
     
 }
 
-var mmm=new Toppings("olive");
-console.log(mmm);
-var jj=new Pizza("jjj","small");
+var mmm=new Toppings("cheese");
+var ol=new Toppings("olive");
+
+var curs=new CrustType("gluttenFree");
+var jj=new Pizza("jjj","medium");
 
 jj.toppings.push(mmm);
+jj.toppings.push(ol);
+jj.crustType.push(curs);
 console.log(jj.fullPrice());
-
-
-
-
-
