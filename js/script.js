@@ -10,6 +10,16 @@ function Pizza(name,size){
     this.crustType=[];
     this.toppings=[];
 }
+//fullprice protype
+Pizza.prototype.fullPrice=function(){
+    var totalToppingPrice;
+    this.toppings[0].toppingPrice().forEach(price => {
+        totalToppingPrice+=price;
+    });
+    var total=this.sizePrice()+totalToppingPrice+this.crustType.crustPrice();
+    return total;
+
+}
 //size price prototype
 Pizza.prototype.sizePrice=function(){
     if(this.size==="small"){
@@ -22,7 +32,6 @@ Pizza.prototype.sizePrice=function(){
         return 1200;
     }
 }
-
 //crustType constructor
 function CrustType(name){
     this.name=name;
@@ -37,12 +46,12 @@ CrustType.prototype.crustPrice=function(){
     else if(this.name==='gluttenFree'){
         return 150;
     }
+   
 }
-function Toppings(toppingName,toppingPrice){
-    this.toppingName=toppingName;
-    this.toppingPrice=toppingPrice;
+function Toppings(toppingName){
+    this.toppingName = toppingName;
 }
-toppingPrice.prototype.Toppings=function(){
+Toppings.prototype.toppingPrice=function(){
     if(this.toppingName==="chesse"){
         return 150;
     }
@@ -52,5 +61,20 @@ toppingPrice.prototype.Toppings=function(){
     else if(this.toppingName==="olive"){
         return 100;
     }
+    else {
+        return 0;
+    }
     
 }
+
+var mmm=new Toppings("olive");
+console.log(mmm);
+var jj=new Pizza("jjj","small");
+
+jj.toppings.push(mmm);
+console.log(jj.fullPrice());
+
+
+
+
+
