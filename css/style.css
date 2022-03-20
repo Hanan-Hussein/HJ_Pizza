@@ -59,3 +59,30 @@ body{
 .firstPage,.secondPage,.pageFive{
     height: 100vh;
 }
+.card{
+    background-color: transparent !important;
+    border-color: #FFFFFF !important;
+    border-radius: 0.7rem !important;
+}
+.menu{
+    height: 100vh;
+}
+.sizes label{
+    display: inline-block;
+    /* width: 10px; */
+    padding: 5px;
+    transition: all 0.3s;
+    /* border: solid 2px #ccc; */
+    border-radius: 5rem;
+
+}
+.sizes input[type="radio"]{
+display: none;
+}
+/* .sizes input[type="radio"] :checked + label {
+    background:  green;
+  } */
+  #smallSize:checked+label, #mediumSize:checked+label, #largeSize:checked+label{
+      background: #FFCB74 !important;
+      color: black;
+  }
