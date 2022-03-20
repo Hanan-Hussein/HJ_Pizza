@@ -1,94 +1,137 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color:#F6F6F6;
-
+    color: #F6F6F6;
 }
-body{
+
+body {
     background-color: #111111;
     height: 100vh;
 }
-.aboutUs{
+
+.aboutUs {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 80vw;
 }
-.us{
+
+.us {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.aboutImg{
-    height:50vh
+
+.aboutImg {
+    height: 50vh
 }
-.callAction{
+
+.callAction {
     height: 84vh;
     z-index: 2;
 }
-.shapeParent{
+
+.shapeParent {
     position: relative;
 }
-.shape{
-    height: 85vh;
-    position:absolute;
-    top:-2.9vh;
-    right:-0.85vw;
-    
-    z-index: -1;
 
+.shape {
+    height: 85vh;
+    position: absolute;
+    top: -2.9vh;
+    right: -0.85vw;
+    z-index: -1;
 }
-.seller{
+
+.seller {
     margin-right: 0;
 }
-.bgContact{
+
+.bgContact {
     background-color: #FFCB74;
     color: black;
 }
-.footerLogo{
+
+.footerLogo {
     height: 27vh;
 }
-.logoHeader{
+
+.logoHeader {
     height: 23vh;
 }
-.rotate{
+
+.rotate {
     height: 70vh;
 }
-.firstPage,.secondPage,.pageFive{
+
+.firstPage,
+.secondPage,
+.pageFive {
     height: 100vh;
 }
-.card{
+
+.card {
     background-color: transparent !important;
     border-color: #FFFFFF !important;
     border-radius: 0.7rem !important;
 }
-.menu{
+
+
+/* .menu{
     height: 100vh;
-}
-.sizes label{
+} */
+
+.sizes label {
     display: inline-block;
     width: 3vw;
     padding: 0.625rem;
     transition: all 0.3s;
     /* border: solid 2px #ccc; */
     border-radius: 1.5rem;
+}
 
+.sizes input[type="radio"] {
+    display: none;
 }
-.sizes input[type="radio"]{
-display: none;
-}
+
+
 /* .sizes input[type="radio"] :checked + label {
     background:  green;
   } */
-  #smallSize:checked+label, #mediumSize:checked+label, #largeSize:checked+label{
-      background: #FFCB74 !important;
-      color: black;
-  }
-  .toppingsAndCrust{
-      display: none;
-  }
-  #addtoCart{
-      display: none;
-  }
+
+#smallSize:checked+label,
+#mediumSize:checked+label,
+#largeSize:checked+label {
+    background: #FFCB74 !important;
+    color: black;
+}
+
+.toppingsAndCrust {
+    display: none;
+}
+
+#addtoCart {
+    display: none;
+}
+
+
+/* .menuText {
+    position: relative;
+    margin: 100px auto;
+    color: #228B22;
+    text-align: center;
+    font-size: 30px;
+    max-width: 600px;
+} */
+
+.menuText::before,
+.menuText::after {
+    display: inline-block;
+    content: "";
+    border-top: .3rem solid #FFCB74;
+    width: 3rem;
+    margin: 0 1rem;
+    transform: translateY(-0.3rem);
+}
