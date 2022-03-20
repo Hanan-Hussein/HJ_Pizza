@@ -4,19 +4,28 @@ $('#customize').click(function(e){
 
 });
 //pizza constructor
-function Pizza(name,size,crustType,price,toppings){
+function Pizza(name,size){
     this.name=name;
     this.size=size;
-    this.crustType=crustType;
-    this.price=price;
-    this.toppings=toppings;
+    this.crustType=[];
+    this.toppings=[];
+}
+//size price prototype
+Pizza.prototype.sizePrice=function(){
+    if(this.size==="small"){
+        return 500;
+    }
+    else if(this.size==="medium"){
+        return 800;
+    }
+    else if(this.size==="large"){
+        return 1200;
+    }
 }
 
 //crustType constructor
 function CrustType(name){
     this.name=name;
- 
-
 }
 CrustType.prototype.crustPrice=function(){
     if(this.name==='crispy'){
@@ -29,4 +38,19 @@ CrustType.prototype.crustPrice=function(){
         return 150;
     }
 }
-
+function Toppings(toppingName,toppingPrice){
+    this.toppingName=toppingName;
+    this.toppingPrice=toppingPrice;
+}
+toppingPrice.prototype.Toppings=function(){
+    if(this.toppingName==="chesse"){
+        return 150;
+    }
+    else if(this.toppingName==="pepporoni"){
+        return 120;
+    }
+    else if(this.toppingName==="olive"){
+        return 100;
+    }
+    
+}
