@@ -169,7 +169,8 @@
         }
         
         .btn-primary,
-        .btn-primary:focus {
+        .btn-primary:focus,
+        .btn-primary:hover {
             border: none;
             box-shadow: none !important;
             background-color: #FFCB74;
@@ -185,6 +186,22 @@
             padding: 5vh;
             margin-bottom: 2rem;
             width: 50vw;
+        }
+        
+        .apple1 {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 1rem;
+        }
+        
+        #foodGallery {
+            position: relative;
+        }
+        
+        .apple3 {
+            position: absolute;
+            bottom: 3rem;
+            right: 1rem;
         }
         
         .titlehead {
@@ -251,7 +268,9 @@
             * {
                 overflow-x: hidden;
             }
-            .us img {
+            .us img,
+            .apple1,
+            .apple3 {
                 display: none;
             }
             .rotate {
