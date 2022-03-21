@@ -78,9 +78,10 @@ $('#formMenu input').click(function(e) {
     form = document.querySelector('#formMenu');
     sizeV = form.sizes.value;
     pizzaNameTitle = form.flavor.value;
+    $('#pizzaTitle').html(pizzaNameTitle);
+
 
     crustName = form.crust.value;
-    // pizzaNameTitle = $('.pizzaName').html();
 
 
 
