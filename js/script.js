@@ -16,6 +16,7 @@ function Pizza(name, size) {
     this.size = size;
     this.crustType = [];
     this.toppings = [];
+
 }
 //fullprice protype
 Pizza.prototype.fullPrice = function() {
@@ -55,8 +56,8 @@ CrustType.prototype.crustPrice = function() {
 
 }
 
-function delivery(address) {
-    this.address = address;
+Pizza.prototype.delivery = function() {
+
 }
 
 function Toppings(toppingName) {
@@ -79,12 +80,13 @@ $('#formMenu input').click(function(e) {
     // e.preventDefault();
     form = document.querySelector('#formMenu');
     sizeV = form.sizes.value;
+    pizzaNameTitle = form.flavor.value;
+
     crustName = form.crust.value;
     // pizzaNameTitle = $('.pizzaName').html();
 
 
-    crust = new CrustType(crustName);
-    toppingName = [];
+
     toppingName = $("input:checkbox:checked").map(function(bbb) {
         return $(this).val();
     }).get();
@@ -94,6 +96,8 @@ $('#formMenu input').click(function(e) {
     newTopping1 = new Toppings(x);
     newTopping2 = new Toppings(y);
     newTopping3 = new Toppings(z);
+    crust = new CrustType(crustName);
+    userPizza = new Pizza(pizzaNameTitle, sizeV);
     userPizza.crustType.push(crust);
     userPizza.toppings.push(newTopping1, newTopping2, newTopping3);
     console.log(userPizza.fullPrice());
