@@ -8,6 +8,7 @@
 body {
     background-color: #111111;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 .aboutUs {
@@ -64,6 +65,12 @@ body {
 
 .rotate {
     height: 70vh;
+    /* width: 100%; */
+}
+
+.bgCard {
+    background-color: rgba(245, 245, 245, 1);
+    opacity: .4;
 }
 
 .firstPage,
@@ -108,12 +115,17 @@ body {
     color: black;
 }
 
-.toppingsAndCrust {
+.toppingsAndCrust,
+.toppingsAndCrust3 {
     display: none;
 }
 
 #addtoCart {
     display: none;
+}
+
+.brand {
+    color: #FFCB74;
 }
 
 
@@ -135,3 +147,63 @@ body {
     margin: 0 1rem;
     transform: translateY(-0.3rem);
 }
+
+.bestSellerText {
+    letter-spacing: 3px;
+}
+
+.form-check-input[type='radio'] {
+    border: 2px solid #FFCB74 !important;
+}
+
+.form-check-input:checked {
+    background-color: #FFCB74 !important;
+    border-color: #FFCB74 !important;
+}
+
+.btn-primary,
+.btn-primary:focus {
+    border: none;
+    box-shadow: none !important;
+    background-color: #FFCB74;
+    color: #F6F6F6;
+}
+
+.ct {
+    border: 1px #F6F6F6;
+}
+
+#cart {
+    border: 1px solid #F6F6F6;
+    padding: 5vh;
+    margin-bottom: 2rem;
+    width: 50vw;
+}
+
+.titlehead {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+#cart li {
+    list-style: none;
+}
+
+.title li {
+    color: #FFCB74;
+}
+
+.totalPrice {
+    border: 1px solid #F6F6F6;
+    padding: 5vh;
+    /* width: 20vw; */
+}
+
+.cartPage {
+    display: none;
+}
+
+
+/* width: 15rem; */

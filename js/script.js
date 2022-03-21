@@ -5,7 +5,7 @@ $('#customize').click(function(e) {
     // $('#priceValue').html(userPizza.fullPrice());
 
 });
-//pizza constructor
+
 function Pizza(name, size) {
     this.name = name;
     this.size = size;
@@ -44,8 +44,14 @@ CrustType.prototype.crustPrice = function() {
         return 250;
     } else if (this.name === 'gluttenFree') {
         return 150;
+    } else {
+        return 150
     }
 
+}
+
+function delivery(address) {
+    this.address = address;
 }
 
 function Toppings(toppingName) {
@@ -63,16 +69,36 @@ Toppings.prototype.toppingPrice = function() {
     }
 
 }
+$('#formMenu').submit(function(e) {
+    e.preventDefault();
 
 
+    Items = [];
+    Items.push(userPizza);
+    console.log(Items);
+
+    // console.log(totalPrice(userPizza));
+    Items.forEach(function(item) {
+        // $("ul#cart").append(" <div class=''titlehead>" + "<li>" + "Name" + "</li>" + "</div>");
+
+        $("ul#cart").append("<div class='titlehead'>" + "<li>" + item.name +
+            "</li>" + "<li>" +
+            item.size + "</li>" + "<li>" +
+            item.fullPrice() + "</li>" +
+            "</div>");
+        totalPricing += item.fullPrice();
+    });
+    $('#overarllPrice').html(totalPricing);
+    $('.cartPage,.allPages').toggle();
+});
 
 $('#formMenu input').click(function(e) {
     // e.preventDefault();
-    form = document.getElementById('formMenu');
+    form = document.querySelector('#formMenu');
     sizeV = form.sizes.value;
     crustName = form.crust.value;
     pizzaNameTitle = $('.pizzaName').html();
-
+    $('#pizzaTitle').html(form.flavor.value);
 
     var crust = new CrustType(crustName);
     var toppingName = [];
@@ -80,10 +106,7 @@ $('#formMenu input').click(function(e) {
         return $(this).val();
     }).get();
 
-    // toppingUser = toppingName.map(function(topper) {
-    //     return new Toppings(topper);
-    // }).get();
-    // console.log(toppingUser);
+
     var [x, y, z] = toppingName;
     var newTopping1 = new Toppings(x);
     var newTopping2 = new Toppings(y);
@@ -95,5 +118,50 @@ $('#formMenu input').click(function(e) {
     console.log(sizeV);
     console.log(crustName);
     $('#priceValue').html(userPizza.fullPrice());
+    // e.preventDefault();
+
 
 });
+Items = [];
+totalPricing = 0;
+
+$('.back').click(function(e) {
+    e.preventDefault();
+    $('.cartPage,.allPages').toggle();
+
+});
+
+
+// function totalPrice(pricing) {
+
+//     var total = 0;
+//     pricing.forEach(function(item) {
+//         total += item.fullPrice();
+//     });
+//     console.log(total)
+//         // return total;
+
+// }
+// console.log(Items);
+// totalPrice(Items);
+// console.log(totalPrice(userPizza));
+
+$('#orderForm input').click(function(e) {
+    var checkoutForm = document.querySelector('#orderForm');
+    var delivery = checkoutForm.delivery.value;
+    console.log(delivery);
+    if (delivery === "no") {
+        $('.location').hide();
+    } else if (delivery === "yes") {
+        $('.location').show();
+    }
+});
+$('#orderForm').submit(function(e) {
+    e.preventDefault();
+    if ($((this).delivery.value) === "yes") {
+        alert("Thank you for shopping with us,The rider is sending your order ");
+
+    } else {
+        alert("Thank you for shopping with us, We will notify you when your order is ready for pickup")
+    }
+})
