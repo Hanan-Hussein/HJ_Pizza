@@ -18,6 +18,10 @@
             width: 80vw;
         }
         
+        #overarllPrice {
+            color: #FFCB74;
+        }
+        
         .us {
             display: flex;
             justify-content: center;
@@ -133,6 +137,14 @@
     max-width: 600px;
 } */
         
+        .location {
+            display: none;
+        }
+        
+        .totaldel {
+            display: none;
+        }
+        
         .menuText::before,
         .menuText::after {
             display: inline-block;
@@ -168,7 +180,7 @@
             border: 1px #F6F6F6;
         }
         
-        #cart {
+        .cart {
             border: 1px solid #F6F6F6;
             padding: 5vh;
             margin-bottom: 2rem;
@@ -182,7 +194,11 @@
             flex-direction: row;
         }
         
-        #cart li {
+        .summarize {
+            display: none;
+        }
+        
+        .cart li {
             list-style: none;
         }
         
@@ -198,7 +214,7 @@
         
         .cartPage {
             display: none;
-            height: 100vh;
+            height: 80vh;
         }
         
         .priceValue {

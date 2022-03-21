@@ -204,7 +204,7 @@
                 <p class="h4 my-5 text-center menuText">Cart</p>
 
                 <div class="d-flex justify-content-around flex-wrap ">
-                    <ul id="cart">
+                    <ul class="cart">
                         <div class="titlehead title">
 
                             <li class="h3">Pizza</li>
@@ -212,19 +212,16 @@
 
                             <li class="h3">Price</li>
 
-
                         </div>
-
                     </ul>
-
                     <div class="totalPrice  ">
                         <p>Total Price</p>
-                        <p>KSH <span id="overarllPrice"></span></p>
+                        <p class="h3">KSH <span id="overarllPrice"></span></p>
                         <form class="d-flex flex-column " id="orderForm">
                             <div id="inputDeets">
                                 <p>Do you want delivery? (Delivery fee is 150)</p>
-                                <input type="radio" name="delivery" class="form-check-input del" value="yes" checked>Yes
-                                <input type="radio" name="delivery" class="form-check-input del" value="no">No
+                                <input type="radio" name="delivery" class="form-check-input del" value="yes">Yes
+                                <input type="radio" name="delivery" class="form-check-input del" value="no" checked>No
                             </div>
                             <div class="location">
                                 <label for="location"> Enter Location</label>
@@ -236,6 +233,7 @@
                         </form>
                     </div>
 
+
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
                     <a href="#menubar"> <button class="btn btn-primary my-4 back">Back to shopping</button>
@@ -244,6 +242,27 @@
             </div>
 
         </div>
+        <div class="container summarize">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+                <p class="menuText h4 ">Summary</p>
+                <ul class="cart my-5">
+                    <div class="titlehead title">
+
+                        <li class="h3">Pizza</li>
+                        <li class="h3">Size</li>
+
+                        <li class="h3">Price</li>
+
+                    </div>
+
+                </ul>
+                <p class="summary my-4"></p>
+                <a href=""> <button class="btn btn-primary " id="homebtn">Back to home page</button>
+                </a>
+
+            </div>
+        </div>
+
         <!-- foodgallery -->
         <div id="foodGallery">
             <div class="container">

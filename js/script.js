@@ -56,9 +56,6 @@ CrustType.prototype.crustPrice = function() {
 
 }
 
-Pizza.prototype.delivery = function() {
-
-}
 
 function Toppings(toppingName) {
     this.toppingName = toppingName;
@@ -141,7 +138,7 @@ $('#formMenu').submit(function(e) {
     Items.forEach(function(item) {
         // $("ul#cart").append(" <div class=''titlehead>" + "<li>" + "Name" + "</li>" + "</div>");
 
-        $("ul#cart").append("<div class='titlehead'>" + "<li>" + item.name +
+        $("ul.cart").append("<div class='titlehead'>" + "<li>" + item.name +
             "</li>" + "<li>" +
             item.size + "</li>" + "<li>" +
             item.fullPrice() + "</li>" +
@@ -168,16 +165,57 @@ $('#orderForm input').click(function(e) {
     console.log(delivery);
     if (delivery === "no") {
         $('.location').hide();
+        $('#overarllPrice').html(totalPricing);
+        $('.totaldel').hide();
+
+
+
+
+
     } else if (delivery === "yes") {
         $('.location').show();
+        var finalprice = totalPricing + 150;
+        $('#overarllPrice').html(finalprice);
+        $('.totaldel').append("150");
+        $('.totaldel').show();
+
     }
 });
 $('#orderForm').submit(function(e) {
     e.preventDefault();
-    if ($((this).delivery.value) === "yes") {
-        alert("Thank you for shopping with us,The rider is sending your order ");
+    var order = document.querySelector('#orderForm')
+    var del = order.delivery.value;
+    pizzaAddress = $('#locField').val();
 
-    } else {
-        alert("Thank you for shopping with us, We will notify you when your order is ready for pickup")
+    if (del === "yes") {
+        if (pizzaAddress === "") {
+            alert("Enter User address");
+            return;
+        } else {
+            var finalprice = totalPricing + 150;
+
+            alert("Thank you for shopping with us,The rider is sending your order to  " + pizzaAddress + ' with pizza worth' + "KSH " + finalprice);
+            $('.summarize, .cartPage').toggle();
+            $(".summary").append("With an added delivery of 150 making the total " + finalprice);
+        }
+
+    } else if (del === "no") {
+        var finalprice = totalPricing;
+        alert("Thank you for shopping with us, We will notify you when your order is ready for pickup" + " KSH " +
+            totalPricing);
+        $('.summarize, .cartPage').toggle();
+        $(".summary").append("Total price for the order is KSH " + "<span class='priceValue'>" + finalprice + "</span>");
+
     }
+
+});
+$('#homebtn').click(function(e) {
+    $('#homebtn,#menubar').toggle();
 })
+
+// function validateUserAddress(addressUser) {
+//     if (addressUser === "") {
+//         alert("Enter User address")
+//         return;
+//     }
+// }
